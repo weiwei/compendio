@@ -1,0 +1,28 @@
+name: publish
+
+on:
+  schedule:
+    - cron: '7 11 * * *'
+  push:
+    branches:
+      - main
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+      - name: Run Publish
+        env:
+          BSKY_PASSWORD: ${{secrets.BSKY_PASSWORD}}
+          BYG_EMAIL: ${{secrets.BYG_EMAIL}}
+          BYG_PASSWORD: ${{secrets.BYG_PASSWORD}}
+          JMS_SERVICE_ID: ${{secrets.JMS_SERVICE_ID}}
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          python ./main.py
