@@ -22,3 +22,8 @@ def get_usage():
     reset_day = data["reset_day"]
 
     return total, used, reset_day
+
+if __name__ == "__main__":
+    total, used, reset_day = get_usage()
+    days_left = get_days_left(reset_day)
+    print(f"BYG: {used:.2f}GB/{total:.2f}GB ({days_left} days left)")

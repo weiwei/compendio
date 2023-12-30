@@ -1,5 +1,6 @@
 import os
 import requests
+from utils import get_days_left
 
 SERVICE_ID = os.environ.get("JMS_SERVICE_ID")
 URL = f"https://justmysocks5.net/members/getbwcounter.php?service=706401&id={SERVICE_ID}"
@@ -14,4 +15,9 @@ def get_usage():
     reset_day = data["bw_reset_day_of_month"]
 
     return total, used, reset_day
+
+if __name__ == "__main__":
+    total, used, reset_day = get_usage()
+    days_left = get_days_left(reset_day)
+    print(f"JMS: {used:.2f}GB/{total:.2f}GB ({days_left} days left)")
 
