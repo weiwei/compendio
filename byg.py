@@ -20,10 +20,8 @@ def get_usage():
     total = data["transfer_enable"]/1024/1024/1024
     used = (data["u"] + data["d"])/1024/1024/1024
     reset_day = data["reset_day"]
-
     return total, used, reset_day
 
 if __name__ == "__main__":
-    total, used, reset_day = get_usage()
-    days_left = get_days_left(reset_day)
+    total, used, days_left = get_usage()
     print(f"BYG: {used:.2f}GB/{total:.2f}GB ({days_left} days left)")
