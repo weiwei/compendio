@@ -22,7 +22,7 @@ facets = [{
         "byteEnd": 27
     },
     "features": {
-        "$type": "app.bsky.richtext.facet#mention",
+        "type": "app.bsky.richtext.facet#mention",
         "did": "did:plc:vkrqsz2gz6lhorh52u7luijl"
     }
 }]
