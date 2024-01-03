@@ -4,9 +4,9 @@ import byg
 import jms
 
 text_builder = client_utils.TextBuilder()
-text_builder.tag("What is a tag", "anyway")
+# text_builder.tag("What is a tag", "anyway")
 text_builder.text("📊 流量统计 ")
-text_builder.mention("weiweiw.bsky.social", "did:plc:vkrqsz2gz6lhorh52u7luijl")
+text_builder.mention("@weiweiw.bsky.social", "did:plc:vkrqsz2gz6lhorh52u7luijl")
 text_builder.text("\n\n")
 
 post = "📊 流量统计 @weiweiw.bsky.social\n\n"
