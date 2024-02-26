@@ -24,8 +24,8 @@ def get_usage():
     reset_day = data["reset_day"]
     if reset_day == 0:
         delta = relativedelta.relativedelta(months=1)
-        reset_day = date.today() + delta - date.today()
-    return total, used, reset_day.days
+        reset_day = (date.today() + delta - date.today()).days
+    return total, used, reset_day
 
 if __name__ == "__main__":
     total, used, days_left = get_usage()
